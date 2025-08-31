@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tech-shop</title>
+  <style>
+    body {
+      background-color: black;
+      margin: 0;
+      font-family: Arial, sans-serif;
+      color: white;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: black;
+      padding: 15px 20px;
+      color: white;
+      
+    }
+
+    h1 {
+      margin: 0;
+    }
+
+    .icons {
+      display: flex;
+      gap: 30px; /* spacing between icons */
+      font-size: 22px;
+      cursor: pointer;
+    }
+
+    /* Banner Section */
+    .banner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin: 100px;
+    }
+
+    .product-text {
+      color: white;
+      font-size: 22px;
+      font-weight: bold;
+      line-height: 1.5;
+      white-space: pre-line;
+    }
+
+    .price {
+      margin-top: 15px;
+      font-size: 22px;
+    }
+
+    .actual-price {
+      text-decoration: line-through;
+      color: gray;
+      margin-right: 15px;
+    }
+
+    .discount-price {
+      color: red;
+      font-weight: bold;
+      font-size: 28px;
+    }
+
+    .image img {
+      height: 400px;
+      width: 400px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Tech-Shop</h1>
+    <div class="icons">
+      <span>🔍</span>
+      <span>🛒</span>
+      <span>👤</span>
+    </div>
+  </header>
+
+  <!-- Banner Section -->
+  <div class="banner">
+    <!-- Left: Text -->
+    <div>
+      <div class="product-text">
+        JBL Live 660NC
+        <h2> Keep The Noise
+        Out, Or In. You
+        Choose.</h2>
+      </div>
+      <div class="price">
+        <span class="actual-price">₹14,999</span>
+        <span class="discount-price">₹9,999</span><br>
+        <button>ShopNow</button>
+      </div>
+    </div>
+
+    <!-- Right: Image -->
+    <div class="image">
+      <img src="./jbl660nc-1.png" alt="JBL Headphones">
+    </div>
+  </div>
+</body>
+</html>
