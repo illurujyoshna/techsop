@@ -31,7 +31,14 @@
       gap: 30px; /* spacing between icons */
       font-size: 22px;
       cursor: pointer;
+      text-decoration: none;
+      
     }
+     .icons a:hover{
+      color: red;
+     }
+
+    
 
     /* Banner Section */
     .banner {
@@ -52,7 +59,24 @@
     .price {
       margin-top: 15px;
       font-size: 22px;
+    } 
+    .price button {
+      margin-top: 15px;
+      padding: 10px 20px;
+      font-size: 16px;
+      font-weight: bold;
+      background: darkred;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: 0.3s;
     }
+
+    .price button:hover {
+      background: red;
+    }
+
 
     .actual-price {
       text-decoration: line-through;
@@ -70,15 +94,54 @@
       height: 400px;
       width: 400px;
     }
+    section{
+      margin: 80px 0;
+    }
+    h2{
+      text-align: center;
+      margin: 60px 30px;
+      color: white;
+      font-size: 26px;
+      margin-bottom: 20px;
+    }
+    .categories{
+     margin: 30px;
+
+    }
+    .categories button{
+      background: none;
+      border: none;
+      color :white;
+      padding: 10px 20px;
+      margin: 0 5px;
+      cursor: pointer;
+      font-size: 14px;
+
+    }
+     
+    .categories .active{
+      background: red;
+      color: white;
+      border-radius: 5px;
+      
+
+    }
+
   </style>
 </head>
 <body>
   <header>
     <h1>Tech-Shop</h1>
     <div class="icons">
-      <span>🔍</span>
-      <span>🛒</span>
-      <span>👤</span>
+      <!-- Search Icon -->
+    <a href="#search" class="icon"> 🔍 </a>
+
+    <!-- Cart Icon -->
+    <a href="#cart" class="icon"> 🛒 </a>
+
+    <!-- Login Icon -->
+    <a href="#login" class="icon"> 👤 </a>
+
     </div>
   </header>
 
@@ -104,5 +167,17 @@
       <img src="./jbl660nc-1.png" alt="JBL Headphones">
     </div>
   </div>
+  <section>
+    <h2>Top Products</h2>
+    <div class="categories">
+      <button class="active">All</button>
+      <button>Headphones</button>
+      <button>Earbuds</button>
+      <button>Earphones</button>
+      <button>Neckbands</button>
+   </div>
+
+
+  </section>
 </body>
 </html>
