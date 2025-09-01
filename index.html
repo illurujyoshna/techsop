@@ -119,14 +119,76 @@
 
     }
      
-    .categories .active{
+    .categories button:hover{
       background: red;
       color: white;
       border-radius: 5px;
       
 
     }
+    .categories .active{
+      background-color: red;
+    }
+    .products {
+     display: grid;
+     grid-template-columns: repeat(4, 1fr);
+     gap: 20px;
+     padding: 20px 40px;
+    }
 
+    .product-card {
+     background: #111;
+     padding: 20px;
+     border-radius: 10px;
+     text-align: center;
+     transition: 0.3s;
+    }
+    .product-card img {
+      width: 100%;
+      height: 150px;
+      object-fit: contain;
+    }
+
+    .product-card:hover {
+     transform: scale(1.05);
+    }
+    .product-card h3 {
+     font-size: 16px;
+     margin: 10px 0 5px;
+     color: #fff;
+    } 
+
+    .product-card p {
+      font-size: 13px;
+      color: #aaa;
+      margin-bottom: 10px;
+    }
+    .browse-card {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #222;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .browse-card:hover {
+     background: red;
+    }
+    @media (max-width: 1024px) {
+     .products {
+       grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 600px) {
+     .products {
+       grid-template-columns: 1fr;
+      }
+    }
+
+
+  
   </style>
 </head>
 <body>
@@ -176,6 +238,127 @@
       <button>Earphones</button>
       <button>Neckbands</button>
    </div>
+   <div class="products">
+     <div class="product-card">
+       
+       <img src="./images/jbl660nc-1.png"alt="Headphone">
+       JBL Live 660NC
+       <p>Wireless Over-Ear NC Headphones</p>
+       <div class="price">
+         <span class="actual-price">₹14,999</span>
+         <span class="discount-price">₹9,999</span><br>
+         <button>Add to cart</button>
+        </div>
+     </div>
+
+     <div class="product-card">
+       <img src="./images/boat518-1.png" alt="Headphones">
+        BoAt Rockerz 518
+       <p>On-Ear Wireless Headphones</p>
+       <div class="price">
+         <span class="actual-price">₹3,990</span>
+         <span class="discount-price">₹1,299</span><br>
+         <button>Add to cart</button>
+        </div>
+      </div>
+      <div class="product-card">
+       <img src="./images/boat131-1.png" alt="Earbuds">
+        BoAt Airpodes 131
+       <p> Wireless in Ear-Earbuds</p>
+       <div class="price">
+         <span class="actual-price">₹2,990</span>
+         <span class="discount-price">₹1,099</span><br>
+         <button>Add to cart</button>
+        </div>
+      </div>
+      <div class="product-card">
+       <img src="./images/boat110-1.png" alt="Earbuds">
+        BoAt BassHeads 110
+       <p>in-Ear Wired Headphones</p>
+       <div class="price">
+         <span class="actual-price">₹999</span>
+         <span class="discount-price">₹499</span><br>
+         <button>Add to cart</button>
+        </div>
+      </div>
+      <div class="product-card">
+       <img src="./images/boat410-1.png" alt="Headphones">
+        BoAt Rockerz 410
+       <p> Bluetooth & wired On-Ear Headphones</p>
+       <div class="price">
+         <span class="actual-price">₹2,990</span>
+         <span class="discount-price">₹1,599</span><br>
+         <button>Add to cart</button>
+        </div>
+      </div>
+      <div class="product-card">
+       <img src="./images/jbl200bt-1.png" alt="Headphones">
+         JBL Live 200BT
+       <p>in-Ear Wireless Neckband</p>
+       <div class="price">
+         <span class="actual-price">₹5,290</span>
+         <span class="discount-price">₹3,699</span><br>
+         <button>Add to cart</button>
+        </div>
+      </div>
+      <div class="product-card">
+       <img src="./images/sonyXb910n-1.png" alt="Headphones">
+        sony WH-XB910N
+       <p> Wireless Over-Ear Headphones</p>
+       <div class="price">
+         <span class="actual-price">₹19,990</span>
+         <span class="discount-price">₹13,489</span><br>
+         <button>Add to cart</button>
+        </div>
+      </div>
+      <div class="product-card">
+       <img src="./images/jbl760nc-1.png" alt="Headphones">
+         JBL Tune 760NC
+       <p> Wireless Over-Ear NC Headphones</p>
+       <div class="price">
+         <span class="actual-price">₹7,999</span>
+         <span class="discount-price">₹5,999</span><br>
+         <button>Add to cart</button>
+        </div>
+      </div>
+      <div class="product-card">
+       <img src="./images/boat255r-1.png" alt="Headphones">
+         boAt Rockerz 255
+       <p>in-Ear Wireless Neckband</p>
+       <div class="price">
+         <span class="actual-price">₹2,990</span>
+         <span class="discount-price">₹899</span><br>
+         <button>Add to cart</button>
+        </div>
+      </div>
+       <div class="product-card">
+       <img src="./images/jbl100-1.png" alt="Headphones">
+         JBL Wave 100
+       <p>in-Ear Truly Wireless Earbuds</p>
+       <div class="price">
+         <span class="actual-price">₹6,999</span>
+         <span class="discount-price">₹2,999</span><br>
+         <button>Add to cart</button>
+        </div>
+      </div>
+       <div class="product-card">
+       <img src="./images/sony1000xm4-1.png" alt="Headphones">
+         Sony WF-1000XM4
+       <p> Wireless in-Ear Earbuds</p>
+       <div class="price">
+         <span class="actual-price">₹24,990</span>
+         <span class="discount-price">₹19,899</span><br>
+         <button>Add to cart</button>
+        </div>
+      </div>
+      <div class="product-card browse-card">
+       <p><b>Browse all products →</b></p>
+      </div>
+
+
+
+    </div>
+
 
 
   </section>
