@@ -281,6 +281,15 @@
       list-style: none;
       padding: 0; 
     }
+    .footer-section ul li {
+      margin: 8px 0;
+    }
+
+    .footer-section ul li a {
+     color: white;
+     text-decoration: none;
+     transition: 0.3s;
+    }
 
     .footer-section ul li a:hover {
       color: red;
@@ -290,10 +299,13 @@
       display: flex;
       gap: 10px;
       margin-top: 10px;
+      flex-direction: column;
     }
 
     .subscribe-form input[type="email"] {
+      width: 70%;
       flex: 1;
+      max-width: 300px;
       padding: 8px;
       border-radius: 5px;
       border: none;
@@ -301,13 +313,15 @@
     }
 
     .subscribe-form button {
-      padding: 8px 12px;
-      border: none;
       background-color: red;
-      border-radius: 5px;
       color: white;
       cursor: pointer;
       transition: 0.3s;
+      width: 50%;
+      border-radius: 5px;
+      padding: 8px 12px;
+      border: none;
+      margin: 0 0 0 25px ;
     }
 
     .subscribe-form button:hover {
@@ -332,6 +346,7 @@
       .subscribe-form {
         flex-direction: column;
         gap: 10px;
+        width: 100%;
       }
 
       .subscribe-form input[type="email"],
@@ -581,7 +596,7 @@
       <div class="footer-section">
         <h3>Tech-Shop</h3>
        <p>Subscribe to our email alerts to receive early discount offers and new products.</p>
-       <form>
+        <form class="subscribe-form">
          <input type="email" placeholder="Your email" required>
          <button type="submit">Subscribe</button>
         </form>
@@ -608,7 +623,15 @@
           <li><a href="#">Security</a></li>
         </ul>
       </div>
-
+      <div class="footer-section">
+       <h3>Company</h3>
+       <ul>
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">Careers</a></li>
+          <li><a href="#">Contact Us</a></li>
+          <li><a href="#">Blog</a></li>
+        </ul>
+      </div>
     
      
     </div>
