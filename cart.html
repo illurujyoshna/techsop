@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tech-Shop</title>
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #111;
+            color: #fff;
+        }
+
+        /* Header */
+        .header {
+            display: flex;
+            justify-content: space-between;
+            padding: 15px 30px;
+            background: #000;
+            border-bottom: 1px solid #333;
+        }
+
+        .logo {
+            font-size: 22px;
+        }
+
+        .cart-icon {
+            position: relative;
+            font-size: 22px;
+        }
+
+        .cart-count {
+            background: red;
+            color: white;
+            border-radius: 50%;
+            padding: 3px 7px;
+            font-size: 12px;
+            position: absolute;
+            top: -8px;
+            right: -10px;
+        }
+
+        /* Main Layout */
+        .main {
+            display: flex;
+            justify-content: space-between;
+            padding: 30px;
+        }
+
+        /* Cart Items */
+        .cart-items {
+            flex: 2;
+        }
+
+        .cart-item {
+            display: flex;
+            background: #222;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 8px;
+        }
+
+        .cart-item img {
+            width: 120px;
+            border-radius: 8px;
+        }
+
+        .item-info {
+            margin-left: 20px;
+        }
+
+        .item-info h2 {
+            font-size: 16px;
+            margin-bottom: 8px;
+        }
+
+        .price {
+            font-size: 15px;
+            margin-bottom: 8px;
+        }
+
+        .old-price {
+            text-decoration: line-through;
+            color: #888;
+            font-size: 13px;
+            margin-left: 6px;
+        }
+
+        .quantity {
+            display: flex;
+            align-items: center;
+        }
+
+        .quantity button {
+            background: #444;
+            border: none;
+            color: white;
+            padding: 4px 8px;
+            margin: 0 6px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        /* Order Summary */
+        .order-summary {
+            flex: 1;
+            background: #1a1a1a;
+            padding: 20px;
+            border-radius: 8px;
+            margin-left: 20px;
+        }
+
+        .order-summary h2 {
+            margin-bottom: 15px;
+        }
+
+        .order-summary p {
+            margin: 8px 0;
+        }
+
+        .discount {
+            color: #00ff00;
+        }
+
+        .free {
+            color: #00ff00;
+        }
+
+        .total {
+            font-weight: bold;
+            margin-top: 12px;
+        }
+
+        .checkout-btn {
+            background: red;
+            color: white;
+            border: none;
+            padding: 12px;
+            width: 100%;
+            margin-top: 15px;
+            cursor: pointer;
+            border-radius: 8px;
+            font-size: 16px;
+        }
+
+        /* Footer */
+        .footer {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            padding: 30px;
+            background: #000;
+        }
+
+        .footer-section h3,
+        .footer-section h4 {
+            margin-bottom: 10px;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 6px;
+            cursor: pointer;
+            color: #bbb;
+        }
+
+        input[type="email"] {
+            padding: 8px;
+            margin-top: 10px;
+            width: 80%;
+            border: none;
+            border-radius: 5px;
+        }
+
+        .subscribe-btn {
+            display: block;
+            margin-top: 10px;
+            padding: 8px 15px;
+            border: none;
+            background: red;
+            color: white;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .copyright {
+            text-align: center;
+            padding: 15px
+    </style>
+</head>
+
+<body>
+
+    <header class="header">
+        <h1 class="logo">Tech-Shop</h1>
+        <div class="cart-icon">
+            <span>🛒</span>
+            <span class="cart-count">4</span>
+        </div>
+    </header>
+
+    <!-- Main Section -->
+    <main class="main">
+        <!-- Cart Items -->
+        <section class="cart-items">
+            <div class="cart-item">
+                <img src="./images/sonyXb910n-1.png" alt="JBL Headphones">
+                <div class="item-info">
+                    <h2>sony WH-XB910N Wireless Over-Ear NC Headphones</h2>
+                    <p class="price">₹13,999 <span class="old-price">₹19,999</span></p>
+                    <div class="quantity">
+                        <button>-</button>
+                        <span>1</span>
+                        <button>+</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="cart-item">
+                <img src="./images/boat518-1.png" alt="boAt Rockerz">
+                <div class="item-info">
+                    <h2>boAt Rockerz 518 On-Ear Wireless Headphones</h2>
+                    <p class="price">₹1,299 <span class="old-price">₹3,990</span></p>
+                    <div class="quantity">
+                        <button>-</button>
+                        <span>1</span>
+                        <button>+</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="cart-item">
+                <img src="./images/jbl660nc-1.png" alt="Headphones">
+                <div class="item-info">
+                    <h2>JBL Live 660NC Wireless Over-Ear NC Headphones</h2>
+                    <p class="price">₹9,990<span class="old-price">₹14,990</span></p>
+                    <div class="quantity">
+                        <button>-</button>
+                        <span>2</span>
+                        <button>+</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Order Summary -->
+        <aside class="order-summary">
+            <h2>Order Summary (4 Items)</h2>
+            <p>Original Price: <span>₹22,978</span></p>
+            <p>Discount: <span class="discount">-₹10,132</span></p>
+            <p>Delivery: <span class="free">Free</span></p>
+            <hr>
+            <p class="total">Total Price: <span>₹12,846</span></p>
+            <button class="checkout-btn">Checkout</button>
+        </aside>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-section">
+            <h3>Tech-Shop</h3>
+            <p>Subscribe to our Email alerts to receive early discount offers, and new products info.</p>
+            <input type="email" placeholder="Email Address">
+            <button class="subscribe-btn">Subscribe</button>
+        </div>
+
+        <div class="footer-section">
+            <h4>Help</h4>
+            <ul>
+                <li>FAQs</li>
+                <li>Track Order</li>
+                <li>Cancel Order</li>
+                <li>Return Order</li>
+                <li>Warranty Info</li>
+            </ul>
+        </div>
+
+        <div class="footer-section">
+            <h4>Policies</h4>
+            <ul>
+                <li>Return Policy</li>
+                <li>Security</li>
+                <li>Sitemap</li>
+                <li>Privacy Policy</li>
+                <li>Terms & Conditions</li>
+            </ul>
+        </div>
+
+        <div class="footer-section">
+            <h4>Company</h4>
+            <ul>
+                <li>About Us</li>
+                <li>Contact Us</li>
+                <li>Service Centres</li>
+                <li>Careers</li>
+                <li>Affiliates</li>
+            </ul>
+        </div>
+    </footer>
+
+    <div class="copyright">
+        <p>2025 | All Rights Reserved ©</p>
+    </div>
+</body>
+
+</html>
