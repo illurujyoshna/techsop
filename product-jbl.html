@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JBL Live 660NC - Tech Shop</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #000;
+            color: #fff;
+        }
+
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 30px;
+            background: #111;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #e50914;
+        }
+
+        .nav-icons span {
+            margin-left: 20px;
+            font-size: 20px;
+            cursor: pointer;
+        }
+
+        .product-page {
+            display: grid;
+            grid-template-columns: 120px 1fr 1fr;
+            gap: 20px;
+            padding: 30px;
+        }
+
+
+        .thumbs {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .thumbs img {
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            border: 2px solid #333;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .thumbs img:hover {
+            border-color: #e50914;
+        }
+
+
+        .main-image img {
+            width: 100%;
+            max-width: 500px;
+            border-radius: 10px;
+        }
+
+
+        .details h2 {
+            font-size: 28px;
+            margin-bottom: 5px;
+        }
+
+        .details p {
+            font-size: 16px;
+            color: #aaa;
+            margin-bottom: 10px;
+        }
+
+        .ratings {
+            margin-bottom: 10px;
+            color: gold;
+        }
+
+        .price {
+            margin: 15px 0;
+        }
+
+        .price .new {
+            font-size: 22px;
+            font-weight: bold;
+            color: #0f0;
+        }
+
+        .price .old {
+            text-decoration: line-through;
+            margin-left: 10px;
+            color: #777;
+        }
+
+        .price .discount {
+            display: block;
+            color: #0ff;
+            margin-top: 5px;
+        }
+
+        .stock {
+            margin: 10px 0;
+            color: #0f0;
+            font-weight: bold;
+        }
+
+        .add-cart {
+            background: #e50914;
+            color: #fff;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-bottom: 20px;
+        }
+
+        .add-cart:hover {
+            background: #b00610;
+        }
+
+
+        .offers p {
+            margin-bottom: 10px;
+        }
+
+        .offers button {
+            background: #222;
+            color: #fff;
+            border: 1px solid #444;
+            padding: 8px 15px;
+            border-radius: 6px;
+            margin-right: 10px;
+            cursor: pointer;
+        }
+
+        .offers button:hover {
+            border-color: #e50914;
+        }
+
+
+        .tabs {
+            display: flex;
+            justify-content: center;
+            margin: 30px 0 10px;
+            gap: 20px;
+        }
+
+        .tabs button {
+            background: #111;
+            border: 1px solid #333;
+            padding: 10px 20px;
+            color: #fff;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+
+        .tabs button:hover {
+           background:red;
+            
+        }
+
+
+        .specs {
+            padding: 20px 40px;
+            background: #111;
+            border-radius: 10px;
+            margin-bottom: 30px;
+        }
+
+        .specs p {
+            margin: 8px 0;
+            font-size: 15px;
+        }
+
+
+        .related {
+            padding: 20px 30px;
+        }
+
+        .related h3 {
+            margin-bottom: 20px;
+            font-size: 22px;
+            border-bottom: 2px solid #333;
+            display: inline-block;
+            text-align: center;
+            width: 100px;
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .card {
+            background: #111;
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card img {
+            width: 100%;
+            height: 150px;
+            object-fit: contain;
+            margin-bottom: 10px;
+        }
+
+        .card h4 {
+            font-size: 16px;
+            margin: 10px 0;
+        }
+
+        .card p {
+            font-size: 14px;
+        }
+
+        .card .old {
+            text-decoration: line-through;
+            color: #777;
+            margin-left: 5px;
+        }
+
+        .card button {
+            margin-top: 10px;
+            background: #e50914;
+            border: none;
+            color: #fff;
+            padding: 8px 15px;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+
+        .card button:hover {
+            background: #b00610;
+        }
+
+        .advantages {
+            padding: 50px 20px;
+        }
+
+        .advantages h2 {
+            text-align: center;
+            font-size: 26px;
+            margin-bottom: 40px;
+        }
+
+        .advantage-items {
+            display: flex;
+            justify-content: space-evenly;
+            gap: 20px;
+            flex-wrap: wrap;
+
+        }
+
+        .advantage {
+            text-align: center;
+            padding: 20px;
+            max-width: 220px;
+            transition: 0.3s;
+        }
+
+        .advantage:hover {
+            color: red;
+            transform: scale(1.05);
+        }
+
+        .advantage h3 {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0;
+            font-size: 18px;
+            color: white;
+            gap: 8px;
+        }
+
+        .advantage p {
+            font-size: 14px;
+            color: gray;
+            text-align: center;
+            margin: 5px 0 0;
+        }
+
+        .advantage .icon {
+            font-size: 22px;
+        }
+
+        footer {
+            background-color: #111;
+            color: white;
+            padding: 40px 20px 20px;
+            font-size: 14px;
+        }
+
+        .footer-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 20px;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .footer-section {
+            flex: 1 1 220px;
+            min-width: 220px;
+        }
+
+        .footer-section h3 {
+            margin-bottom: 15px;
+            color: red;
+            font-size: 18px;
+        }
+
+        .footer-section p,
+        .footer-section ul,
+        .footer-section a {
+            color: white;
+            text-decoration: none;
+            margin: 5px 0;
+        }
+
+        .footer-section ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-section ul li {
+            margin: 8px 0;
+        }
+
+        .footer-section ul li a {
+            color: white;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .footer-section ul li a:hover {
+            color: red;
+        }
+
+        .subscribe-form {
+            display: flex;
+            gap: 10px;
+            margin-top: 10px;
+            flex-direction: column;
+        }
+
+        .subscribe-form input[type="email"] {
+            width: 50%;
+            flex: 1;
+            max-width: 200px;
+            padding: 8px;
+            border-radius: 5px;
+            border: none;
+            outline: none;
+        }
+
+        .subscribe-form button {
+            background-color: red;
+            color: white;
+            cursor: pointer;
+            transition: 0.3s;
+            width: 40%;
+            border-radius: 5px;
+            padding: 8px 12px;
+            border: none;
+            margin: 0 0 0 0;
+        }
+
+        .subscribe-form button:hover {
+            background-color: darkred;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            margin-top: 20px;
+            border-top: 1px solid gray;
+            padding-top: 10px;
+            color: gray;
+        }
+
+        @media (max-width: 768px) {
+            .footer-container {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+
+            .subscribe-form {
+                flex-direction: column;
+                gap: 10px;
+                width: 100%;
+            }
+
+            .subscribe-form input[type="email"],
+            .subscribe-form button {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="logo">Tech-Shop</div>
+        <div class="nav-icons">
+            <span>🔍</span>
+            <span>🛒<sup>4</sup></span>
+            <span>👤</span>
+        </div>
+    </header>
+    <main class="product-page">
+
+        <div class="thumbs">
+            <img src="./images/jbl660nc-1.png" alt="Side view">
+            <img src="./images/jbl660nc-2.png" alt="Top view">
+            <img src="./images/jbl660nc-3.png" alt="Box view">
+            <img src="./images/jbl660nc-4.png" alt="Folded view">
+        </div>
+
+
+        <div class="main-image">
+            <img src="./images/jbl660nc-1.png" alt="JBL Live 660NC">
+        </div>
+
+
+        <div class="details">
+            <h2>JBL Live 660NC</h2>
+            <p>Wireless Over-Ear NC Headphones</p>
+            <div class="ratings">⭐⭐⭐⭐⭐ | 1234 Ratings</div>
+            <div class="price">
+                <span class="new">₹9,999</span>
+                <span class="old">₹14,999</span>
+                <span class="discount">You save ₹5,000 (33%)</span>
+            </div>
+            <div class="stock">✅ In Stock</div>
+            <button class="add-cart">Add to Cart</button>
+            <div class="offers">
+                <p><strong>Offers and Discounts</strong></p>
+                <button>No Cost EMI</button>
+                <button>Pay Later & Cashback</button>
+            </div>
+        </div>
+    </main>
+
+
+    <section class="tabs">
+        <button class="active">Specifications</button>
+        <button>Overview</button>
+        <button>Reviews</button>
+    </section>
+
+
+    <section class="specs">
+        <p><strong>Brand:</strong> JBL</p>
+        <p><strong>Model:</strong> Live 660NC</p>
+        <p><strong>Generic Name:</strong> Headphones</p>
+        <p><strong>Type:</strong> Over Ear</p>
+        <p><strong>Connectivity:</strong> Wireless</p>
+        <p><strong>Microphone:</strong> Yes</p>
+    </section>
+
+    <!-- Related Products -->
+    <section class="related">
+        <h3>Related Products</h3>
+        <div class="product-grid">
+            <div class="card">
+                <img src="./images/jbl760nc-1.png" alt="">
+                <h4>JBL Live 760NC</h4>
+                <p>₹11,999 <span class="old">₹14,999</span></p>
+                <button>Add to Cart</button>
+            </div>
+            <div class="card">
+                <img src="./images/boat518-1.png" alt="">
+                <h4>boAt Rockerz 518</h4>
+                <p>₹1,299 <span class="old">₹3,990</span></p>
+                <button>Add to Cart</button>
+            </div>
+            <div class="card">
+                <img src="./images/boat410-1.png" alt="">
+                <h4>boAt Rockerz 410</h4>
+                <p>₹1,599 <span class="old">₹2,990</span></p>
+                <button>Add to Cart</button>
+            </div>
+            <div class="card">
+                <img src="./images/sonyXb910n-1.png" alt="">
+                <h4>Sony WH-XB910N</h4>
+                <p>₹13,489 <span class="old">₹19,990</span></p>
+                <button>Add to Cart</button>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <section class="advantages">
+            <div class="container">
+                <h2>Our Advantages</h2>
+                <div class="advantage-items">
+                    <div class="advantage">
+                        <h3> <span class="icon">🚚</span>Express Delivery</h3>
+                        <p>Ships in 24 Hours</p>
+                    </div>
+                    <div class="advantage">
+                        <h3> <span class="icon">🛡️</span> Brand Warranty</h3>
+                        <p>100% Original Products</p>
+                    </div>
+                    <div class="advantage">
+                        <h3><span class="icon">🔥</span> Exciting Deals</h3>
+                        <p>On All Prepaid Orders</p>
+                    </div>
+                    <div class="advantage">
+                        <h3><span class="icon">💳</span>Secure Payments</h3>
+                        <p>Safe & Encrypted Transactions</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Footer -->
+        <footer>
+            <div class="footer-container">
+
+                <div class="footer-section">
+                    <h3>Tech-Shop</h3>
+                    <p>Subscribe to our email alerts to receive early discount offers and new products.</p>
+                    <form class="subscribe-form">
+                        <input type="email" placeholder="Your email" required>
+                        <button type="submit">Subscribe</button>
+                    </form>
+                </div>
+
+
+                <div class="footer-section">
+                    <h3>Help</h3>
+                    <ul>
+                        <li><a href="#">Customer Support</a></li>
+                        <li><a href="#">Shipping Info</a></li>
+                        <li><a href="#">Returns</a></li>
+                        <li><a href="#">FAQ</a></li>
+                    </ul>
+                </div>
+
+
+                <div class="footer-section">
+                    <h3>Policies</h3>
+                    <ul>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Refund Policy</a></li>
+                        <li><a href="#">Security</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Company</h3>
+                    <ul>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">Blog</a></li>
+                    </ul>
+                </div>
+
+
+            </div>
+
+
+            <div class="footer-bottom">
+                &copy; 2025 Tech-Shop. All Rights Reserved.
+            </div>
+        </footer>
+</body>
+
+</html>
